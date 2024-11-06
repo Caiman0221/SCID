@@ -10,11 +10,11 @@
      * column_old и впоследствии преобразует данные из него в column в соответствии с новым типом
      * Данная возможность отключается переменной $create_old
      * 
-     * @param $db_test_conn 
-     * @param $db_test
-     * @param $db_prod_conn
-     * @param $db_prod
-     * @param $create_old
+     * @param $db_test_conn подключение к тестовой БД
+     * @param $db_test данные тестовой БД (таблицы и их структура)
+     * @param $db_prod_conn подключение к прод БД
+     * @param $db_prod данные прод БД (таблицы и их структура)
+     * @param $create_old переключатель (создавать ли при сравнении стобцы _old и последующей миграции данных в актуальные)
      * 
      * @method showTables отображает все таблицы в БД
      * @method showColumns отображает все колонки и их типы в таблице
