@@ -77,6 +77,7 @@
                 // проверяем, есть ли такая таблица на проде, если нет, то создаем новую
                 if (!array_key_exists($table, $this->db_prod)) {
                     $this->addTable2DB($table);
+                    echo "Создаем таблицу $table \n";
                     continue;
                 }
                 // Проверяем на совпадение всех столбцов
@@ -85,6 +86,7 @@
                     // если нет столбца, то создаем новый
                     if (!array_key_exists($column, $this->db_prod[$table])) {
                         $this->addColumn2Table($table, $column, $data, $after_column);
+                        echo "Добавляем новый столбец $column в таблице $table \n";
                         continue;
                     }
                     $after_column = " AFTER `$column`";
@@ -105,6 +107,7 @@
                     }
                 }
             }
+            echo "Миграция успешно выполнена \n";
         }
         public function addTable2DB (string $table) 
         {
